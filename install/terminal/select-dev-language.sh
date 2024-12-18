@@ -1,45 +1,40 @@
 # Install default programming languages
-if [[ -v OMAKUB_FIRST_RUN_LANGUAGES ]]; then
-	languages=$OMAKUB_FIRST_RUN_LANGUAGES
+if [[ -v OMORA_FIRST_RUN_LANGUAGES ]]; then
+	languages=$OMORA_FIRST_RUN_LANGUAGES
 else
-	AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Rust" "Java")
+	AVAILABLE_LANGUAGES=("Java" "Node.js" "Go" "Python" "Rust" "Ruby on Rails")
 	languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 10 --header "Select programming languages")
 fi
 
-if [[ -n "$languages" ]]; then
-	for language in $languages; do
-		case $language in
-		Ruby)
-			mise use --global ruby@3.3
-			mise x ruby -- gem install rails --no-document
-			;;
-		Node.js)
-			mise use --global node@lts
-			;;
-		Go)
-			mise use --global go@latest
-			;;
-		PHP)
-			sudo add-apt-repository -y ppa:ondrej/php
-			sudo apt -y install php8.3 php8.3-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip}
-			php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-			php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
-			rm composer-setup.php
-			;;
-		Python)
-			mise use --global python@latest
-			;;
-		Elixir)
-			mise use --global erlang@latest
-			mise use --global elixir@latest
-			mise x elixir -- mix local.hex --force
-			;;
-		Rust)
-			bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -- -y
-			;;
-		Java)
-			mise use --global java@latest
-			;;
-		esac
-	done
-fi
+function installDevLanguages(){
+	local langsSelected=("$@")
+	if [[ -n "$langsSelected" ]]; then
+		for language in "${langsSelected[@]}"; do 
+			case "$language" in
+			Ruby)
+				mise use --global ruby@3.3
+				mise x ruby -- gem install rails --no-document
+				;;
+			Node.js)
+				mise use --global node@lts
+				;;
+			Go)
+				mise use --global go@latest
+				;;
+			Python)
+				mise use --global python@latest
+				;;
+			Rust)
+				mise use -g rust@latest
+				;;
+			Java)
+				mise use --global java@17 java@21
+				;;
+			esac
+		done
+	fi
+}
+
+export -f installDevLanguages
+gum spin --show-error --title "Installing selected development languages..." -- bash -c "installDevLanguages \"$languages\""
+unset -f installDevLanguages

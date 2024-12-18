@@ -1,2 +1,1 @@
-# Sync files across machines using https://dropbox.com
-sudo apt install -y nautilus-dropbox >/dev/null
+gum spin --show-error --title "Installing Dropbox (Nautilus)..." -- sudo dnf install -y nautilus-dropbox --skip-broken >/dev/null

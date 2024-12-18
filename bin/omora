@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source $OMORA_PATH/ascii.sh
+echo "" # Add spacing
+echo "                                 $(cat $OMORA_PATH/version)"
+echo "" # Add spacing
+source $OMORA_PATH/bin/omora-sub/menu.sh

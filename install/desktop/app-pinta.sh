@@ -1,2 +1,1 @@
-# FIXME: Get this out of snap
-sudo snap install pinta
+gum spin --show-error --title "Installing Pinta..." -- sudo dnf install pinta -yq --skip-broken

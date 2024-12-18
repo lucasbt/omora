@@ -1,2 +1,2 @@
 # Provides a system clipboard interface for Neovim under Wayland
-sudo apt install wl-clipboard
+gum spin --show-error --title "Installing WL Clipboard..." -- sudo dnf install wl-clipboard -yq --skip-broken

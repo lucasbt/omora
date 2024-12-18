@@ -1,0 +1,1 @@
+gum spin --show-error --title "Installing Planify..." -- flatpak install flathub io.github.alainm23.planify -y &> /dev/null

@@ -1,0 +1,1 @@
+gum spin --show-error --title "Installing Amberol..." -- flatpak install flathub io.bassi.Amberol -y &> /dev/null

@@ -1,0 +1,1 @@
+gum spin --show-error --title "Installing Meld..." -- sudo dnf install meld -y --skip-broken

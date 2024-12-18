@@ -1,1 +1,1 @@
-sudo apt install -y gnome-tweak-tool
+gum spin --show-error --title "Installing Gnome Tweaks..." -- sudo dnf install -yq gnome-tweaks --skip-broken

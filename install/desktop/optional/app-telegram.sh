@@ -1,0 +1,1 @@
+gum spin --show-error --title "Installing Telegram..." -- flatpak install -y flathub org.telegram.desktop &> /dev/null
