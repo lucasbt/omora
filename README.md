@@ -1,4 +1,13 @@
-# Omora
+<div align="center">
+   <img align="center" width="128px" height="140" src="applications/icons/Omora.png" />
+	<h1 align="center"><b>Omora</b></h1>
+	<p align="center">
+		Opinionated Fedora Workstation Setup
+    <br />
+  </p>
+</div>
+
+<br/>
 
 **Omora** is a fork of **[Omakub](https://omakub.org/)**, specifically designed for **[Fedora Workstation](https://fedoraproject.org/pt-br/workstation/)**. It's a tool that turns a fresh Fedora Workstation installation into a fully-configured, modern development environment with a single command.
 
@@ -15,7 +24,7 @@ While **Omora** shares many core concepts with **Omakub**, it's adapted to fit t
 To get started with Omora, simply run the following command in your terminal:
 
 ```bash
-bash -c "$(wget -qO- https://raw.githubusercontent.com/lucasbt/omora/master/install.sh)"
+bash -c "$(wget -qO- https://raw.githubusercontent.com/lucasbt/omora/main/install.sh)"
 ```
 
 This will install all necessary tools and configure your Fedora system to be ready to use.
