@@ -2,7 +2,7 @@
    <img align="center" width="256" height="256" src="applications/icons/Omora.png" />
 	<h1 align="center"><b>Omora</b></h1>
 	<p align="center">
-		Opinionated Fedora Workstation Setup
+		Opinionated Fedora Workstation Dev Setup
     <br />
   </p>
 </div>
