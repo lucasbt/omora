@@ -1,5 +1,5 @@
 <div align="center">
-   <img align="center" width="128px" height="140" src="applications/icons/Omora.png" />
+   <img align="center" width="256" height="256" src="applications/icons/Omora.png" />
 	<h1 align="center"><b>Omora</b></h1>
 	<p align="center">
 		Opinionated Fedora Workstation Setup
