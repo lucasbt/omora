@@ -1,8 +1,32 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+
 # History control
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTSIZE=32768
 HISTFILESIZE="${HISTSIZE}"
+# Make some commands not show up in history
+export HISTIGNORE="ls:ls *:cd:cd -:pwd:exit:date:* --help"
 
 # Autocompletion
 source /usr/share/bash-completion/bash_completion

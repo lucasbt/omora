@@ -1,4 +1,7 @@
-source ~/.local/share/omora/defaults/bash/shell
-source ~/.local/share/omora/defaults/bash/aliases
-source ~/.local/share/omora/defaults/bash/prompt
-source ~/.local/share/omora/defaults/bash/init
+# We do this before the following so that all the paths work.
+for file in $OMORA_PATH/defaults/bash/{path,exports,shell,aliases,functions,prompt,init,dockerfuncs,extra}; do
+	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+		source "$file"
+	fi
+done
+unset file

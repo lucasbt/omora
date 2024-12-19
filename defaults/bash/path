@@ -1,0 +1,22 @@
+#!/bin/sh
+
+export OMORA_PATH="$HOME/.local/share/omora"
+export PATH="$OMORA_PATH/bin:$PATH"
+
+# go path
+export GOPATH="${HOME}/.go"
+
+# update path
+export PATH=/usr/local/bin:${PATH}:/sbin:/usr/local/sbin
+
+# User global specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+
+# add go path
+export PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
+
+# update cdpath
+export CDPATH=${CDPATH}:.:${HOME}:${HOME}/Develop/projects:${HOME}/Develop/tools:${HOME}/Documents/projects:/work/develop
+export CDPATH=${CDPATH}:${GOPATH}/src/github.com:${GOPATH}/src/golang.org:${GOPATH}/src

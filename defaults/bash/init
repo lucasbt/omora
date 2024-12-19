@@ -10,3 +10,31 @@ if command -v fzf &> /dev/null; then
   source /usr/share/bash-completion/completions/fzf
   source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config
+# ignoring wildcards
+[[ -e "$HOME/.ssh/config" ]] && complete -o "default" \
+	-o "nospace" \
+	-W "$(grep "^Host" ~/.ssh/config | \
+	grep -v "[?*]" | cut -d " " -f2 | \
+	tr ' ' '\n')" scp sftp ssh
+
+# SSH auto-completion based on entries in known_hosts.
+if [[ -e ~/.ssh/known_hosts ]]; then
+  complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp
+fi
+
+# source kubectl bash completion
+if hash kubectl 2>/dev/null; then
+	# shellcheck source=/dev/null
+	source <(kubectl completion bash)
+fi
+
+# Enable git branch name completion. 
+# curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+else
+  curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
+  . ~/.git-completion.bash
+fi

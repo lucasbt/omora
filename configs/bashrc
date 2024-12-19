@@ -3,3 +3,5 @@ source ~/.local/share/omora/defaults/bash/rc
 # Editor used by CLI
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
+
+[ -x /usr/bin/lesspipe ] && export LESSOPEN="|lesspipe %s"
