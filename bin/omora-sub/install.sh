@@ -1,7 +1,8 @@
 CHOICES=(
 	"Dev Language  Install programming language environment"
 	"Dev Database  Install development database in Docker"
-	"Bitwarden     Manage your passwords securely across devices"
+	"Bitwarden     Best OSS app for manage your passwords securely across devices"
+	"1Password     Best Commercial app for manage your passwords securely across devices"
 	"Discord       Messaging, voice and video client"
 	"Telegram      Messaging app with a focus on security and speed"
 	"Brave         Chrome-based browser with built-in ad blocking"
