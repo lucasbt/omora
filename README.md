@@ -24,7 +24,7 @@ While **Omora** shares many core concepts with **Omakub**, it's adapted to fit t
 To get started with Omora, simply run the following command in your terminal:
 
 ```bash
-bash -c "$(wget -qO- https://raw.githubusercontent.com/lucasbt/omora/main/install.sh)"
+bash -c "$(wget -qO- https://raw.githubusercontent.com/lucasbt/omora/main/boot.sh)"
 ```
 
 This will install all necessary tools and configure your Fedora system to be ready to use.
