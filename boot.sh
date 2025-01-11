@@ -11,8 +11,8 @@ cat << "EOF"
 
 EOF
 
-echo -e ">> Omora is for fresh Fedora 40+ installations only! "
-echo -e "\nBegin installation (or abort with ctrl+c)...\n"
+echo -e "\\e[1;35mOMORA IS FOR FRESH FEDORA 40+ INSTALLATIONS ONLY! \\e[0m"
+echo -e "\n\\e[1;32mBegin installation (or abort with ctrl+c)...\\e[0m\n"
 
 echo -e "This script requires sudo to install packages and configure the system"
 echo -ne "Sudo applied? "
@@ -39,8 +39,7 @@ if [ "$1" = "--dev-mode" ] || [ "$1" = "-d" ]; then
 
 else
     echo -ne "Checking for system updates, please wait..."
-    dnf --refresh check-update >/dev/null
-    sudo dnf install -yq git
+    sudo dnf --refresh install -yq git
     echo -e "\r\033[KChecking for system updates -> OK!"
 
     echo "Installing Omora..."
@@ -49,12 +48,12 @@ else
     if [[ $OMORA_REF != "main" ]]; then
         cd ~/.local/share/omora
         git fetch origin "${OMORA_REF:-main}" >/dev/null
-        git checkout FETCH_HEAD >/dev/null
+        git pull >/dev/null
         cd - >/dev/null
     fi
 fi
 
-echo "Component installation and system configuration started..."
+echo -e "\n\\e[1;33mComponent installation and system configuration started...\\e[0m\n"
 source ~/.local/share/omora/install.sh
 echo ""
 
