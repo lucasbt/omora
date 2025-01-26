@@ -19,7 +19,6 @@ shopt -s nocaseglob
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
-
 # History control
 shopt -s histappend
 HISTCONTROL=ignoreboth
@@ -36,3 +35,5 @@ export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omora/bin:$PATH"
 set +h
 
 export OMORA_PATH="/home/$USER/.local/share/omora"
+
+source "$OMORA_PATH/defaults/bash/rc"

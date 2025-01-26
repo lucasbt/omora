@@ -1,1 +1,2 @@
-gum spin --show-error --title "Config Flathub..." -- sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+echo -e "Config Flathub..."
+sudo flatpak -y remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo > /dev/null 2>&1

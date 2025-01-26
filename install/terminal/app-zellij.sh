@@ -10,7 +10,5 @@ function addZellij(){
     [ ! -f "$HOME/.config/zellij/config.kdl" ] && cp $OMORA_PATH/configs/zellij.kdl ~/.config/zellij/config.kdl
     cp $OMORA_PATH/themes/tokyo-night/zellij.kdl ~/.config/zellij/themes/tokyo-night.kdl
 }
-
-export -f addZellij
-gum spin --show-error --title "Installing and Config Zellij..." -- bash -c addZellij
-unset -f addZellij
+echo -e "Installing and Config Zellij..."
+addZellij > /dev/null 2>&1

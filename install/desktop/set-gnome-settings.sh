@@ -26,7 +26,6 @@ function settingGnome(){
     gsettings set org.gnome.nautilus.preferences show-create-link true
 }
 
-export -f settingGnome
-gum spin --show-error --title "Config Gnome System..." -- bash -c settingGnome
-unset -f settingGnome
+echo -e "Config Gnome System..."
+settingGnome > /dev/null 2>&1
 

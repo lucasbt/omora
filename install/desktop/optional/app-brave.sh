@@ -5,6 +5,6 @@ function appBrave(){
     sudo dnf install brave-browser -y --skip-broken &> /dev/null
     echo "Brave has been installed."
 }
-export -f appBrave
-gum spin --show-error --title "Installing Brave Browser..." -- bash -c appBrave
-unset -f appBrave
+
+echo -e "Installing Brave Browser..."
+appBrave > /dev/null 2>&1

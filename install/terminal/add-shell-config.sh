@@ -17,10 +17,13 @@ function addShellConfig(){
     [ -f "~/.bashrc" ] && mv ~/.bashrc ~/.bashrc.bak
     cp $OMORA_PATH/configs/bashrc ~/.bashrc
 
+    [ -f "~/.bashrc" ] && mv ~/.profile ~/.profile.bak
+    cp $OMORA_PATH/configs/profile ~/.profile
+
     [ -f "~/.inputrc" ] && mv ~/.inputrc ~/.inputrc.bak
     cp $OMORA_PATH/configs/inputrc ~/.inputrc
 }
 
-export -f addShellConfig
-gum spin --show-error --title "Adding shell configs..." -- bash -c addShellConfig
-unset -f addShellConfig
+echo -e "Adding shell configs..."
+addShellConfig > /dev/null
+

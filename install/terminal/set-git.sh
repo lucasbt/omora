@@ -10,9 +10,8 @@ function setGitAliases(){
     git config --global mergetool.prompt true
 }
 
-export -f setGitAliases
-gum spin --show-error --title "Setting git aliases.." -- bash -c setGitAliases
-unset -f setGitAliases
+echo -e "Setting git aliases..."
+setGitAliases > /dev/null 2>&1
 
 git_username=$(gum input --header "What name do you want to use for git commits?" --placeholder "Enter your username to use in Git..." --header.foreground="Gray")
 git_email=$(gum input --header "What email do you want to use for git commits?" --placeholder "Enter your email to use in Git..." --header.foreground="Gray")

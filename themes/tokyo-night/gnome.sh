@@ -1,3 +1,3 @@
-OMAKUB_THEME_COLOR="purple"
-OMAKUB_THEME_BACKGROUND="tokyo-night/background.jpg"
-source $OMAKUB_PATH/themes/set-gnome-theme.sh
+OMORA_THEME_COLOR="purple"
+OMORA_THEME_BACKGROUND="tokyo-night/background.jpg"
+source $OMORA_PATH/themes/set-gnome-theme.sh

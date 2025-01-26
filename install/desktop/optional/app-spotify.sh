@@ -1,1 +1,2 @@
-gum spin --show-error --title "Installing Spotify..." -- flatpak install -y flathub com.spotify.Client
+echo -e "Installing Spotify..."
+flatpak install -y flathub com.spotify.Client > /dev/null 2>&1

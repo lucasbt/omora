@@ -1,0 +1,2 @@
+export OMORA_PATH="/home/$USER/.local/share/omora"
+source "$OMORA_PATH/defaults/bash/shell"

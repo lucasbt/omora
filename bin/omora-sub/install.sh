@@ -8,6 +8,7 @@ CHOICES=(
 	"Brave         Chrome-based browser with built-in ad blocking"
 	"Amberol       Plays music, and nothing else"
 	"Dropbox       Sync files across computers with ease"
+	"Draw.io       Diagramming tool"
 	"Foliate       Read e-books in style"
 	"Ollama        Run LLMs, like Meta's Llama3, locally"
 	"OnlyOffice    Office productivity suite"
@@ -32,7 +33,7 @@ elif [[ "$CHOICE" == "> All"* ]]; then
 
 	[[ -n "$INSTALLER_FILE" ]] &&
 		gum confirm "Run installer?" &&
-		source $INSTALLER_FILE		
+		source $INSTALLER_FILE > /dev/null 2>&1
 else
 	INSTALLER=$(echo "$CHOICE" | awk -F ' {2,}' '{print $1}' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
@@ -43,7 +44,7 @@ else
 	*) INSTALLER_FILE="$OMORA_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
 	esac
 
-	source $INSTALLER_FILE
+	source $INSTALLER_FILE > /dev/null 2>&1
 fi
 
 gum spin --spinner meter --title "Install completed!" -- sleep 3

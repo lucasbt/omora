@@ -1,1 +1,2 @@
-gum spin --show-error --title "Installing Dropbox (Nautilus)..." -- sudo dnf install -y nautilus-dropbox --skip-broken >/dev/null
+echo -e "Installing Dropbox (Nautilus)..."
+sudo dnf install -y nautilus-dropbox --skip-broken > /dev/null 2>&1

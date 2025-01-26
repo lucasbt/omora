@@ -1,5 +1,5 @@
 # We do this before the following so that all the paths work.
-for file in $OMORA_PATH/defaults/bash/{path,exports,shell,aliases,functions,prompt,init,dockerfuncs,extra}; do
+for file in $OMORA_PATH/defaults/bash/{path,exports,aliases,functions,prompt,init,dockerfuncs}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		source "$file"
 	fi

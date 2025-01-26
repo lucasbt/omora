@@ -9,6 +9,5 @@ function addUlauncher(){
     cp ~/.local/share/omora/configs/ulauncher.json ~/.config/ulauncher/settings.json
 }
 
-export -f addUlauncher
-gum spin --show-error --title "Installing and Config Ulauncher..." -- bash -c addUlauncher
-unset -f addUlauncher
+echo -e "Installing and Config Ulauncher..."
+addUlauncher > /dev/null 2>&1

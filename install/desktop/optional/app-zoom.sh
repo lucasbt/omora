@@ -8,6 +8,6 @@ function addZoom(){
     cd - &> /dev/null
     echo "Zoom has been installed."
 }
-export -f addZoom
-gum spin --show-error --title "Installing Zoom..." -- bash -c addZoom
-unset -f addZoom
+
+echo -e "Installing Zoom..."
+addZoom > /dev/null 2>&1

@@ -1,2 +1,3 @@
 # Flameshot is a nice step-up over the default Gnome screenshot tool
-gum spin --show-error --title "Installing Flameshot..." -- sudo dnf install -yq flameshot --skip-broken
+echo -e "Installing Flameshot..."
+sudo dnf install -yq flameshot --skip-broken > /dev/null 2>&1

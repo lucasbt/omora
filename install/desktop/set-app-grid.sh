@@ -13,6 +13,5 @@ function configAppGrid(){
     sudo rm -rf /usr/local/share/applications/vim.desktop
 }
 
-export -f configAppGrid
-gum spin --show-error --title "Config App Grid..." -- bash -c configAppGrid
-unset -f configAppGrid
+echo -e "Config App Grid..."
+configAppGrid > /dev/null 2>&1

@@ -45,6 +45,5 @@ function configDock(){
 	gsettings set org.gnome.shell favorite-apps "$favorites_list"
 }
 
-export -f configDock
-gum spin --show-error --title "Config dock favorites apps..." -- bash -c configDock
-unset -f configDock
+echo -e "Config dock favorites apps..."
+configDock > /dev/null 2>&1

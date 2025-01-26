@@ -64,6 +64,5 @@ gum style --foreground=212 --bold --faint --border=none --align=left --width=$((
     gum style --foreground=gray --faint --border=none --align=left --width=$(( $(tput cols) - 10 )) \
     "Press ENTER to continue?" && read -n 1 -s
 
-export -f configGnomeExtensions
-gum spin --show-error --title "Installing and Config Gnome Extensions..." -- bash -c configGnomeExtensions
-unset -f configGnomeExtensions
+echo -e "Installing and Config Gnome Extensions..."
+configGnomeExtensions > /dev/null 2>&1

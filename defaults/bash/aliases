@@ -1,8 +1,8 @@
 # File system
-alias ls='eza -lh --group-directories-first --icons'
-alias lt='eza --tree --level=2 --long --icons --git'
-alias lta='lt -a'
-alias ff="fzf --preview 'batcat --style=numbers --color=always {}'"
+alias lse='eza -lh --group-directories-first --icons'
+alias lte='eza --tree --level=2 --long --icons --git'
+alias lta='lte -a'
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias fd='fdfind'
 alias l="ls -lhF --color"
 alias la="ls -lahF --color"
@@ -11,14 +11,14 @@ alias lsd="ls -lhF --color | grep --color=never '^d'"
 # Always enable colored `grep` output
 alias grep='grep --color=auto '
 # Get week number
-alias week='date +%V'v
+alias week='date +%V'
 # Stopwatch
 alias timer='start=$(date +%s); echo "Timer started. Stop with Ctrl-D."; echo "Initial time.........: $(date)"; { time cat; } >/dev/null 2>&1 ; end=$(date +%s); echo "Final time...........: $(date)"; echo "Total elapsed time...: $((end-start)) seconds"'
 # IP addresses
 #alias pubip="dig -4 +short myip.opendns.com @208.67.222.222"
 alias pubip="curl -s http://checkip.amazonaws.com"
 alias localip="ifconfig | grep -Eo 'inet [0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | grep -v '127.0.0.1'"
-alias ips="ip -o addr show | awk '{print $2 ": " $4 " (" ($3 == "inet" ? "IPv4" : "IPv6") ")"}' | sed 's/\/[0-9]*//'"
+alias ips="ip -o addr show | awk '{if (\$3 == \"inet\") {print \$2 \": \" \$4 \" (IPv4)\"} else {print \$2 \": \" \$4 \" (IPv6)\"}}' | sed 's/\/[0-9]*//'"
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
 # View HTTP traffic
@@ -50,7 +50,6 @@ alias h="history"
 alias n='nvim'
 alias g='git'
 alias d='docker'
-alias bat='batcat'
 alias lzg='lazygit'
 alias lzd='lazydocker'
 alias open='xdg-open'

@@ -8,6 +8,5 @@ function addLazyGit(){
     cd -
 }
 
-export -f addLazyGit
-gum spin --show-error --title "Installing and Config LazyGit..." -- bash -c addLazyGit
-unset -f addLazyGit
+echo -e "Installing and Config LazyGit..."
+addLazyGit > /dev/null 2>&1

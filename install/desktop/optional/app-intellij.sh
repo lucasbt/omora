@@ -47,6 +47,5 @@ EOF
     fi
 }
 
-export -f addIntellijce
-gum spin --show-error --title "Installing IntelliJ CE IDE..." -- bash -c addIntellijce
-unset -f addIntellijce
+echo -e "Installing IntelliJ CE IDE..."
+addIntellijce > /dev/null 2>&1

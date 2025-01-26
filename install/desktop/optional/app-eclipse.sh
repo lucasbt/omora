@@ -64,6 +64,5 @@ EOF
     fi
 }
 
-export -f appEclipse
-gum spin --show-error --title "Installing Eclipse IDE..." -- bash -c appEclipse
-unset -f appEclipse
+echo -e "Installing Eclipse IDE..."
+appEclipse > /dev/null 2>&1

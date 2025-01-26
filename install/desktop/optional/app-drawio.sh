@@ -7,7 +7,5 @@ function appDrawio(){
     echo "Drawio has been installed."
 }
 
-
-export -f appDrawio
-gum spin --show-error --title "Installing Drawio..." -- bash -c appDrawio
-unset -f appDrawio
+echo -e "Installing Drawio..."
+appDrawio > /dev/null 2>&1

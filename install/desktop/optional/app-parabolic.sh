@@ -1,1 +1,2 @@
-gum spin --show-error --title "Installing Parabolic..." -- flatpak install flathub org.nickvision.tubeconverter -y &> /dev/null
+echo -e "Installing Parabolic..."
+flatpak install flathub org.nickvision.tubeconverter -y > /dev/null 2>&1

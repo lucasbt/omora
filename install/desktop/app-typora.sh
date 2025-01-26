@@ -9,6 +9,5 @@ function addTypora(){
     cp ~/.local/share/omora/configs/typora/ia_typora_night.css ~/.config/Typora/themes/
 }
 
-export -f addTypora
-gum spin --show-error --title "Installing and Config Typora..." -- bash -c addTypora
-unset -f addTypora
+echo -e "Installing and Config Typora..."
+addTypora > /dev/null 2>&1

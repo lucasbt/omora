@@ -7,6 +7,6 @@ function addTodoist(){
     cd - &> /dev/null
     echo "Todoist has been installed."
 }
-export -f addTodoist
-gum spin --show-error --title "Installing Todoist..." -- bash -c addTodoist
-unset -f addTodoist
+
+echo -e "Installing Todoist..."
+addTodoist > /dev/null 2>&1

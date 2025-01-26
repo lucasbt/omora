@@ -24,6 +24,6 @@ function appBitwarden(){
         fi
     fi
 }
-export -f appBitwarden
-gum spin --show-error --title "Installing Bitwarden (Desktop and CLI)..." -- bash -c appBitwarden
-unset -f appBitwarden
+
+echo -e "Installing Bitwarden (Desktop and CLI)..."
+appBitwarden > /dev/null 2>&1

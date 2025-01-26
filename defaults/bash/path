@@ -1,6 +1,4 @@
 #!/bin/sh
-
-export OMORA_PATH="$HOME/.local/share/omora"
 export PATH="$OMORA_PATH/bin:$PATH"
 
 # go path

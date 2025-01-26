@@ -59,6 +59,5 @@ function configHotkeys(){
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding '<Shift><Alt>1'
 }
 
-export -f configHotkeys
-gum spin --show-error --title "Config System Hotkeys..." -- bash -c configHotkeys
-unset -f configHotkeys
+echo -e "Config System Hotkeys..."
+configHotkeys > /dev/null 2>&1

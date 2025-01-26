@@ -33,7 +33,5 @@ function addNeovim(){
 		source $OMORA_PATH/applications/Neovim.sh
 	fi
 }
-
-export -f addNeovim
-gum spin --show-error --title "Installing and Config Neovim..." -- bash -c addNeovim
-unset -f addNeovim
+echo -e "Installing and Config Neovim..."
+addNeovim > /dev/null 2>&1

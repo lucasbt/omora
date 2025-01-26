@@ -7,6 +7,5 @@ function app1password(){
     sudo dnf install -y 1password 1password-cli
 }
 
-export -f app1password
-gum spin --show-error --title "Installing 1Password (Desktop and CLI)..." -- bash -c app1password
-unset -f app1password
+echo -e "Installing 1Password (Desktop and CLI)..."
+app1password > /dev/null 2>&1

@@ -1,3 +1,3 @@
-OMAKUB_THEME_COLOR="sage"
-OMAKUB_THEME_BACKGROUND="gruvbox/background.jpg"
-source $OMAKUB_PATH/themes/set-gnome-theme.sh
+OMORA_THEME_COLOR="sage"
+OMORA_THEME_BACKGROUND="gruvbox/background.jpg"
+source $OMORA_PATH/themes/set-gnome-theme.sh

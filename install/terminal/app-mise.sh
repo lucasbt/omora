@@ -4,7 +4,5 @@ function addMise(){
     sudo dnf update -y
     sudo dnf install -y mise
 }
-
-export -f addMise
-gum spin --show-error --title "Installing Mise..." -- bash -c addMise
-unset -f addMise
+echo -e "Installing Mise..."
+addMise > /dev/null 2>&1

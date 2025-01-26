@@ -7,8 +7,9 @@ if command -v zoxide &> /dev/null; then
 fi
 
 if command -v fzf &> /dev/null; then
-  source /usr/share/bash-completion/completions/fzf
-  source /usr/share/doc/fzf/examples/key-bindings.bash
+  # FZF mappings and options
+  eval "$(fzf --bash)"
+  [ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
 fi
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config

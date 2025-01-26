@@ -12,10 +12,8 @@ function configMultimedia(){
     sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y --skip-broken --allowerasing
     sudo dnf swap libva-intel-media-driver intel-media-driver -y --skip-broken --allowerasing
 }
-
-export -f configMultimedia
-gum spin --show-error --title "Installing and Config Multimedia..." -- bash -c configMultimedia
-unset -f configMultimedia
+echo -e "Installing and Config Multimedia..."
+configMultimedia > /dev/null 2>&1
 
 gum style --foreground=212 --border-foreground=111 --border=rounded --align=left --padding="2 2" --width=$(( $(tput cols) - 10 )) \
     "Now, for Mozilla Firefox, you need open Firefox, go to menu -> Add-ons -> Plugins and enable OpenH264 plugin. You can do a simple test whether your H.264 works in RTC on this page (https://mozilla.github.io/webrtc-landing/pc_test.html). Go to webpage for finishing your configuration https://fedoraproject.org/wiki/OpenH264#Firefox_config_changes."

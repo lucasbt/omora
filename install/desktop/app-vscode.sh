@@ -12,6 +12,5 @@ function addVSCode(){
     code --install-extension enkia.tokyo-night
 }
 
-export -f addVSCode
-gum spin --show-error --title "Installing and Config Visual Studio Code..." -- bash -c addVSCode
-unset -f addVSCode
+echo -e "Installing and Config Visual Studio Code..."
+addVSCode > /dev/null 2>&1

@@ -61,7 +61,7 @@ function setIcons(){
     echo -e "Preferred icons installation complete."
 }
 
-export -f setFonts setIcons
-gum spin --show-error --title "Downloading and installing preferred fonts..." -- bash -c setFonts
-gum spin --show-error --title "Downloading and installing preferred icons..." -- bash -c setIcons
-unset -f setFonts setIcons
+echo -e "Downloading and installing preferred fonts..."
+setFonts > /dev/null 2>&1
+echo -e "Downloading and installing preferred icons..."
+setIcons > /dev/null 2>&1
