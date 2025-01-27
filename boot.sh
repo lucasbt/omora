@@ -1,13 +1,13 @@
 #set -e
 
-if [ "$OMORA_DEBUG_MODE" == "true" ] || [ "$OMORA_DEBUG_MODE" -eq 1 ]; then
+if [ "$OMORA_DEBUG_MODE" == "true" ] || [ "$OMORA_DEBUG_MODE" == "1" ]; then
     OMORA_DEBUG_MODE=1
 else
     OMORA_DEBUG_MODE=
 fi
 
 cat << "EOF"
- _______  __   __  _______  ______    _______ 
+ _______  __   __  _______  ______    _______
 |       ||  |_|  ||       ||    _ |  |   _   |
 |   _   ||       ||   _   ||   | ||  |  |_|  |
 |  | |  ||       ||  | |  ||   |_||_ |       |
@@ -34,7 +34,7 @@ if [ "$1" = "--dev-mode" ] || [ "$1" = "-d" ]; then
 	echo -e "\n\033[0;93;5mAttention! The script is running in DEVELOPMENT MODE!\033[0m\n"
     OMORA_DEBUG_MODE=true
     echo -e "Copying local content to ~/.local/share/omora..."
-	
+
     echo -ne "Creating target directory if it does not exist..."
     mkdir -p ~/.local/share/omora > /dev/null 2>&1
 	rm -rf ~/.local/share/omora > /dev/null 2>&1
